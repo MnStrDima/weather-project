@@ -1,0 +1,70 @@
+.youtube-section {
+  @extend %section-style;
+}
+
+.youtube-list__container {
+  @extend %container-style;
+}
+
+.youtube-video__list {
+  @extend %list-throw;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'youtube-video__wrapper'
+    'youtube-video__wrapper'
+    'youtube-video__wrapper'
+    'youtube-video__wrapper'
+    'youtube-video__wrapper'
+    'youtube-video__wrapper'
+    'youtube-video__wrapper'
+    'youtube-video__wrapper'
+    'youtube-video__wrapper'
+    'youtube-video__wrapper'
+    'youtube-video__wrapper'
+    'youtube-video__wrapper';
+  grid-gap: 20px;
+
+  @media screen and (min-width: 480px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'youtube-video__wrapper youtube-video__wrapper'
+      'youtube-video__wrapper youtube-video__wrapper'
+      'youtube-video__wrapper youtube-video__wrapper'
+      'youtube-video__wrapper youtube-video__wrapper'
+      'youtube-video__wrapper youtube-video__wrapper'
+      'youtube-video__wrapper youtube-video__wrapper';
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      'youtube-video__wrapper youtube-video__wrapper youtube-video__wrapper'
+      'youtube-video__wrapper youtube-video__wrapper youtube-video__wrapper'
+      'youtube-video__wrapper youtube-video__wrapper youtube-video__wrapper'
+      'youtube-video__wrapper youtube-video__wrapper youtube-video__wrapper';
+  }
+}
+
+.youtube-video__wrapper {
+  display: block;
+  grid-area: 'youtube-video__wrapper';
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.youtube-video__wrapper:hover,
+.youtube-video__wrapper:focus {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+}
+
+.youtube-section > iframe {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  padding: 10px;
+}
